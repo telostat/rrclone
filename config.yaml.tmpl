@@ -1,0 +1,16 @@
+- source_remote: source1
+  source_path: /
+  target_remote: target1
+  target_path: /data/backups/source1
+  filters:
+  - "+ /data/**"
+  - "+ /home/**"
+  - "- *"
+- source_remote: source2
+  source_path: /
+  target_remote: target1
+  target_path: /data/backups/source2
+  filters:
+  - "+ /data/**"
+  - "+ /home/**"
+  - "- *"
