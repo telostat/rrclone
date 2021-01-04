@@ -1,5 +1,8 @@
 # rrclone
 
+![GitHub contributors](https://img.shields.io/github/contributors/telostat/rrclone)
+![GitHub](https://img.shields.io/github/license/telostat/rrclone)
+
 `rrclone` is an Rclone wrapper to use YAML/JSON configuration for backup tasks.
 
 > **TODO:** Provide full README.
