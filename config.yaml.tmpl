@@ -1,16 +1,60 @@
-- source_remote: source1
-  source_path: /
-  target_remote: target1
-  target_path: /data/backups/source1
-  filters:
-  - "+ /data/**"
-  - "+ /home/**"
-  - "- *"
-- source_remote: source2
-  source_path: /
-  target_remote: target1
-  target_path: /data/backups/source2
-  filters:
-  - "+ /data/**"
-  - "+ /home/**"
-  - "- *"
+tasks:
+  - name: "Backup remote to remote"
+    source:
+      backend:
+        type: "sftp"
+        vars:
+          host: "remote-source"
+          user: "user1"
+          md5sum_command: "md5sum"
+          sha1sum_command: "sha1sum"
+      path: "/"
+      filters:
+        - "+ /data/**"
+        - "+ /home/**"
+        - "- *"
+    target:
+      backend:
+        type: "sftp"
+        vars:
+          host: "remote-target"
+          user: "user2"
+          md5sum_command: "md5sum"
+          sha1sum_command: "sha1sum"
+      path: "/backups/remote-source/"
+  - name: "Backup remote to local"
+    source:
+      backend:
+        type: "sftp"
+        vars:
+          host: "remote-source"
+          user: "user1"
+          md5sum_command: "md5sum"
+          sha1sum_command: "sha1sum"
+      path: "/"
+      filters:
+        - "+ /data/**"
+        - "+ /home/**"
+        - "- *"
+    target:
+      backend:
+        type: "local"
+      path: "/backups/remote-source"
+  - name: "Backup local to remote"
+    source:
+      backend:
+        type: "local"
+      path: "/"
+      filters:
+        - "+ /data/**"
+        - "+ /home/**"
+        - "- *"
+    target:
+      backend:
+        type: "sftp"
+        vars:
+          host: "remote-target"
+          user: "user1"
+          md5sum_command: "md5sum"
+          sha1sum_command: "sha1sum"
+      path: "/backups/laptop"
