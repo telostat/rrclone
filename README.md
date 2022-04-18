@@ -13,8 +13,16 @@
 
 ## Installation
 
-1. Install [rclone](https://rclone.org/install/)
-1. Put `rrclone` onto `$PATH`
+First, make sure that [rclone](https://rclone.org/install/) is
+installed.
+
+Then, download the latest version from releases for your architecture
+and put it in your path:
+
+```sh
+curl -sLo /tmp/rrclone "https://github.com/telostat/rrclone/releases/latest/download/rrclone-$(uname -s)-$(uname -m)"
+sudo install /tmp/rrclone /usr/local/bin
+```
 
 ## Usage
 
