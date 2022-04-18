@@ -1,5 +1,6 @@
 # rrclone
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/telostat/rrclone)
 ![GitHub contributors](https://img.shields.io/github/contributors/telostat/rrclone)
 ![GitHub](https://img.shields.io/github/license/telostat/rrclone)
 
