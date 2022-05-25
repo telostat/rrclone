@@ -1,13 +1,21 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="0.0.4"></a>
+## [0.0.4] - 2022-05-25
 ### Chore
 - bump development version to 0.0.4
 - **build:** update Cargo.lock
+- **dev:** integrate git-chglog
 - **docs:** add instruction to update Cargo.lock post-version bump
 
 ### Feat
 - create empty source directories on destination
+
+### Pull Requests
+- Merge pull request [#13](https://github.com/telostat/rrclone/issues/13) from telostat/vst/git-chglog
+- Merge pull request [#12](https://github.com/telostat/rrclone/issues/12) from telostat/vst/issue-11
 
 
 <a name="0.0.3"></a>
@@ -58,6 +66,7 @@
 - Merge pull request [#1](https://github.com/telostat/rrclone/issues/1) from telostat/init
 
 
-[Unreleased]: https://github.com/telostat/rrclone/compare/0.0.3...HEAD
+[Unreleased]: https://github.com/telostat/rrclone/compare/0.0.4...HEAD
+[0.0.4]: https://github.com/telostat/rrclone/compare/0.0.3...0.0.4
 [0.0.3]: https://github.com/telostat/rrclone/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/telostat/rrclone/compare/0.0.1...0.0.2
