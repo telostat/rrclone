@@ -7,5 +7,6 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.cargo
     pkgs.rustc
+    pkgs.git-chglog
   ];
 }
