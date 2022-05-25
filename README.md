@@ -121,11 +121,7 @@ git checkout develop
 git rebase main
 ```
 
-Bump development version, commit and push:
-
-```sh
-git push
-```
+Bump development version, run `cargo build` to update `Cargo.lock`, commit and `git push`.
 
 ## License
 
