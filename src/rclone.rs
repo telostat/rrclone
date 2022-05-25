@@ -51,6 +51,7 @@ pub fn task_to_args(task: &config::Task) -> Vec<String> {
         "--stats".to_string(),
         "10000m".to_string(),
         "sync".to_string(),
+        "--create-empty-src-dirs".to_string(),
         "--delete-excluded".to_string(),
         format!(
             "{}{}",
