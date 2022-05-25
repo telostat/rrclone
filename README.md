@@ -9,8 +9,8 @@
 > **TODO:** Provide full README.
 >
 > **NOTE:** This is a work-in-progress application with a very limited
-> functionality. Expect breaking changes and improved functionality as we move
-> on.
+> functionality. Expect breaking changes and improved functionality as
+> we move on.
 
 ## Installation
 
@@ -43,6 +43,12 @@ sudo install /tmp/rrclone /usr/local/bin
 
 ## Releasing
 
+Enter Nix shell:
+
+```sh
+nix-shell
+```
+
 Install [cross](https://github.com/cross-rs/cross):
 
 ```sh
@@ -56,13 +62,19 @@ git checkout main
 git merge --no-ff develop
 ```
 
-Update the version information in `Cargo.toml` if required. Update the
-`CHANGELOG.md` as well (currently using `standard-version`).
+Update the version information in `Cargo.toml` if required and run
+`cargo build` to update `Cargo.lock`.
 
 Set the release tag (example is `0.0.2`):
 
 ```sh
 export RELTAG="0.0.2"
+```
+
+Update the `CHANGELOG.md` by running:
+
+```sh
+git-chglog --output CHANGELOG.md --next-tag "${RELTAG}"
 ```
 
 Commit changes:
@@ -89,8 +101,9 @@ Create a new GitHub release:
 gh release create "${RELTAG}" --generate-notes --title "v${RELTAG}" --draft
 ```
 
-Build on your own architecture and upload to the release(hoping that it is Linux
-x86_64, otherwise must add this to cross build instructions, too):
+Build on your own architecture and upload to the release(hoping that
+it is Linux x86_64, otherwise must add this to cross build
+instructions, too):
 
 ```sh
 cargo build --release
@@ -121,11 +134,8 @@ git checkout develop
 git rebase main
 ```
 
-Bump development version, commit and push:
-
-```sh
-git push
-```
+Bump development version, run `cargo build` to update `Cargo.lock`,
+commit and `git push`.
 
 ## License
 

@@ -1,6 +1,6 @@
 [package]
 name = "rrclone"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["Vehbi Sinan Tunalioglu <vst@vsthost.com>"]
 edition = "2018"
 
